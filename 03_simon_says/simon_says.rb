@@ -1,0 +1,34 @@
+def echo(echoes)
+  echoes
+end
+
+def shout(shouts)
+  shouts.upcase
+end
+
+def repeat(repeats, n=2)
+  space_between = Array.new
+  n.times do space_between << repeats end
+  space_between.join(' ')
+end
+
+def start_of_word(word, spot)
+  word[0..spot-1]
+end
+
+def first_word(word)
+  word.split.first
+end
+
+def titleize(word)
+  small_words = ['a', 'in', 'of', 'the', 'and', 'over', 'an']
+  result = []
+  word.capitalize!
+  word.split(' ').each do |a|
+    unless small_words.include? a 
+      a.capitalize!
+    end
+    result << a
+  end
+  result.join(' ')
+end
